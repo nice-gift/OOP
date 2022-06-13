@@ -82,6 +82,32 @@ public class Flower {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Flower flower = (Flower) o;
+
+        if (Double.compare(flower.weight, weight) != 0) return false;
+        if (price != flower.price) return false;
+        if (length != flower.length) return false;
+        if (!name.equals(flower.name)) return false;
+        return color.equals(flower.color);
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 31;
+        int hash = name.hashCode();
+        hash = hash * code + color.hashCode();
+        hash = hash * code + Double.hashCode(price);
+        hash = hash * code + Double.hashCode(weight);
+        hash = hash * code + length;
+        return hash;
+    }
+
+    @Override
     public String toString() {
         return name + ": color = " + color + ", price = " + price
                 + ", weight = " + weight + ", length = " + length;

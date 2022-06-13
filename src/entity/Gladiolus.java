@@ -61,6 +61,28 @@ Inflorescences of gladioli: 1 - single row; 2 - two-row; 3 - next;
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        Gladiolus gladiolus = (Gladiolus) o;
+
+        if (numFlwrsInInflr != gladiolus.numFlwrsInInflr) return false;
+        if (numOpenFlwrsInInflr != gladiolus.numOpenFlwrsInInflr) return false;
+        return inflrType.equals(gladiolus.inflrType);
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 31;
+        int hash = super.hashCode() * code + numFlwrsInInflr;
+        hash = hash * code + numOpenFlwrsInInflr;
+        hash = hash * code + inflrType.hashCode();
+        return hash;
+    }
+
+    @Override
     public String toString() {
         return super.toString() + ", numFlwrsInInflr = " +
                 numFlwrsInInflr + ", numOpenFlwrsInInflr = " +

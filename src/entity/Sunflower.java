@@ -41,6 +41,26 @@ public class Sunflower extends Flower {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        Sunflower sunflower = (Sunflower) o;
+
+        if (headDiameter != sunflower.headDiameter) return false;
+        return numOfLeaves != sunflower.numOfLeaves;
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 31;
+        int hash = super.hashCode() * code + headDiameter;
+        hash = hash * code + numOfLeaves;
+        return hash;
+    }
+
+    @Override
     public String toString() {
         return super.toString() + ", headDiameter = " + headDiameter +
                 ", numOfLeaves = " + numOfLeaves;

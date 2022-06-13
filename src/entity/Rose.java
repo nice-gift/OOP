@@ -29,7 +29,7 @@ public class Rose extends Flower {
     }
 
     public void setLengthOfThorn(double lengthOfThorn) {
-        if (lengthOfThorn >= 0 && lengthOfThorn <=getLength()) {
+        if (lengthOfThorn >= 0 && lengthOfThorn <= getLength()) {
             this.lengthOfThorn = lengthOfThorn;
         }
     }
@@ -42,6 +42,26 @@ public class Rose extends Flower {
         if (numOfLeaves >= 0 && numOfLeaves <= 20) {
             this.numOfLeaves = numOfLeaves;
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        Rose rose = (Rose) o;
+
+        if (lengthOfThorn != rose.lengthOfThorn) return false;
+        return numOfLeaves == rose.numOfLeaves;
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 31;
+        int hash = super.hashCode() * code + Double.hashCode(lengthOfThorn);
+        hash = hash * code + numOfLeaves;
+        return hash;
     }
 
     @Override
