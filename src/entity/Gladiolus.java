@@ -62,8 +62,6 @@ Inflorescences of gladioli: 1 - single row; 2 - two-row; 3 - next;
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
 
         Gladiolus gladiolus = (Gladiolus) o;
