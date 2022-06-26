@@ -64,7 +64,7 @@ public class Rose extends Flower {
 
     @Override
     public String toString() {
-        return super.toString() + ", lengthOfThorn = " + lengthOfThorn +
+        return "Rose " + super.toString() + ", lengthOfThorn = " + lengthOfThorn +
                 ", numOfLeaves = " + numOfLeaves;
     }
 }

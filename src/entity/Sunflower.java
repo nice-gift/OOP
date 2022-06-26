@@ -60,7 +60,7 @@ public class Sunflower extends Flower {
 
     @Override
     public String toString() {
-        return super.toString() + ", headDiameter = " + headDiameter +
+        return "Sunflower " + super.toString() + ", headDiameter = " + headDiameter +
                 ", numOfLeaves = " + numOfLeaves;
     }
 }

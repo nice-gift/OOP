@@ -1,35 +1,30 @@
 package controller;
 
+import entity.Bouquet;
 import entity.Flower;
-import entity.Gladiolus;
 import entity.Rose;
 import entity.Sunflower;
+import model.logic.ShopAssistance;
 
 public class Main {
     public static void main(String[] args) {
-//        Gladiolus gladiolus = new Gladiolus();
-//        Gladiolus gladiolus1 = new Gladiolus(gladiolus);
-//        System.out.println(gladiolus);
-//        System.out.println(gladiolus1);
-        Rose rose = new Rose("rose", "red", 5.2, 105, 70, 80, 5);
-        Rose rose1 = new Rose("rose", "red", 5.1, 105, 70, 80, 5);
-        Rose rose2 = rose;
 
-        Flower flower = new Flower("rose", "red", 5.2, 105, 71);
-        Flower flower1 = new Flower("rose", "red", 5.2, 105, 70);
+        Flower[] flowers = new Flower[10];
 
+        for (int i = 0; i < 5; i++) {
+            flowers[i] = new Rose("Pink Panther", "pink", 3.5, 78, 200, 1.5, 5);
+        }
 
-        System.out.println(rose.equals(rose1));
-        System.out.println(rose.equals(rose2));
-        System.out.println(flower.equals(flower1));
-        System.out.println(flower.hashCode());
-        System.out.println(flower1.hashCode());
-//        rose.setLengthOfThorn(90);
-//        System.out.println(rose.getLengthOfThorn());
-//        System.out.println(rose);
-//        System.out.println(rose1);
-//
-//        Sunflower sunflower=new Sunflower();
-//        System.out.println(sunflower);
+        for (int i = 5; i < flowers.length; i++) {
+            flowers[i] = new Sunflower("Pink Panther", "pink", 3.5, 78, 200, 15, 2);
+        }
+
+        Bouquet bouquet = new Bouquet(flowers);
+        double weight = ShopAssistance.calculateTotalWeight(bouquet);
+        double price = ShopAssistance.calculateTotalPrice(bouquet);
+
+        System.out.println(bouquet);
+        System.out.println("Total price: " + price);
+        System.out.println("Total weight: " + weight);
     }
 }

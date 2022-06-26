@@ -34,7 +34,8 @@ public class Bouquet {
 
     public void add(Flower flower) {
         if (flower == null) {
-            return;}
+            return;
+        }
 
         ArrayList<Flower> temp = new ArrayList<>();
 
@@ -48,7 +49,8 @@ public class Bouquet {
 
     public void remove(Flower flower) {
         if (flower == null) {
-            return;}
+            return;
+        }
 
         boolean flag = false;
         ArrayList<Flower> temp = new ArrayList<>();
@@ -80,5 +82,16 @@ public class Bouquet {
             }
             flowers = temp;
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder("List of flowers: ");
+        for (Flower flower :
+                flowers) {
+            stringBuilder.append("\n").append(flower);
+        }
+
+        return stringBuilder + "";
     }
 }
