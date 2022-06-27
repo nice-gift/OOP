@@ -1,4 +1,4 @@
-package entity;
+package model.entity;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BouquetTest {
-    private static Bouquet bouquet;
+    private static Bouquet1 bouquet1;
 
     @Before
     public void init() {
@@ -16,7 +16,7 @@ public class BouquetTest {
                 new Flower("Rose", "red", 3, 120, 70),
         };
 
-        bouquet = new Bouquet(flowers);
+        bouquet1 = new Bouquet1(flowers);
     }
 
     @Test
@@ -25,7 +25,7 @@ public class BouquetTest {
         int index = 1;
         Flower expected = new Flower("Rose", "red", 3, 100, 80);
 
-        Flower actual = bouquet.get(index);
+        Flower actual = bouquet1.get(index);
 
         if (expected.getPrice() != actual.getPrice()
                 || expected.getWeight() != actual.getWeight()
@@ -40,7 +40,7 @@ public class BouquetTest {
     public void firstTestGetIndexOutOfBound() {
         int index = -1;
 
-        Flower actual = bouquet.get(index);
+        Flower actual = bouquet1.get(index);
 
         assertNull(actual);
     }
@@ -49,7 +49,7 @@ public class BouquetTest {
     public void secondTestGetIndexOutOfBound() {
         int index = 3;
 
-        Flower actual = bouquet.get(index);
+        Flower actual = bouquet1.get(index);
 
         assertNull(actual);
     }
@@ -62,7 +62,7 @@ public class BouquetTest {
 //        flowers.add(new Flower("Rose", "red", 3, 100, 80));
 //        flowers.add(new Flower("Rose", "red", 3, 120, 70));
 
-        bouquet.add(new Flower("Rose", "red", 3, 121, 71));
+        bouquet1.add(new Flower("Rose", "red", 3, 121, 71));
 
         Flower[] expected = {
                 new Flower("Rose", "red", 3, 110, 70),
@@ -72,11 +72,11 @@ public class BouquetTest {
         };
 
         for (int i = 0; i < expected.length; i++) {
-            if (expected[i].getPrice() != bouquet.get(i).getPrice() ||
-                    expected[i].getWeight() != bouquet.get(i).getWeight() ||
-                    expected[i].getLength() != bouquet.get(i).getLength() ||
-                    !expected[i].getColor().equals(bouquet.get(i).getColor()) ||
-                    !expected[i].getName().equals(bouquet.get(i).getName())) {
+            if (expected[i].getPrice() != bouquet1.get(i).getPrice() ||
+                    expected[i].getWeight() != bouquet1.get(i).getWeight() ||
+                    expected[i].getLength() != bouquet1.get(i).getLength() ||
+                    !expected[i].getColor().equals(bouquet1.get(i).getColor()) ||
+                    !expected[i].getName().equals(bouquet1.get(i).getName())) {
                 fail();
             }
         }
@@ -84,7 +84,7 @@ public class BouquetTest {
 
     @Test
     public void testRemoveByIndex() {
-        bouquet.remove(1);
+        bouquet1.remove(1);
 
         Flower[] expected = {
                 new Flower("Rose", "red", 3, 110, 70),
@@ -92,11 +92,11 @@ public class BouquetTest {
         };
 
         for (int i = 0; i < expected.length; i++) {
-            if (expected[i].getPrice() != bouquet.get(i).getPrice() ||
-                    expected[i].getWeight() != bouquet.get(i).getWeight() ||
-                    expected[i].getLength() != bouquet.get(i).getLength() ||
-                    !expected[i].getColor().equals(bouquet.get(i).getColor()) ||
-                    !expected[i].getName().equals(bouquet.get(i).getName())) {
+            if (expected[i].getPrice() != bouquet1.get(i).getPrice() ||
+                    expected[i].getWeight() != bouquet1.get(i).getWeight() ||
+                    expected[i].getLength() != bouquet1.get(i).getLength() ||
+                    !expected[i].getColor().equals(bouquet1.get(i).getColor()) ||
+                    !expected[i].getName().equals(bouquet1.get(i).getName())) {
                 fail();
             }
         }
@@ -104,7 +104,7 @@ public class BouquetTest {
 
     @Test
     public void testRemoveByIndexOutOfBound() {
-        bouquet.remove(4);
+        bouquet1.remove(4);
 
         Flower[] expected = {
                 new Flower("Rose", "red", 3, 110, 70),
@@ -113,11 +113,11 @@ public class BouquetTest {
         };
 
         for (int i = 0; i < expected.length; i++) {
-            if (expected[i].getPrice() != bouquet.get(i).getPrice() ||
-                    expected[i].getWeight() != bouquet.get(i).getWeight() ||
-                    expected[i].getLength() != bouquet.get(i).getLength() ||
-                    !expected[i].getColor().equals(bouquet.get(i).getColor()) ||
-                    !expected[i].getName().equals(bouquet.get(i).getName())) {
+            if (expected[i].getPrice() != bouquet1.get(i).getPrice() ||
+                    expected[i].getWeight() != bouquet1.get(i).getWeight() ||
+                    expected[i].getLength() != bouquet1.get(i).getLength() ||
+                    !expected[i].getColor().equals(bouquet1.get(i).getColor()) ||
+                    !expected[i].getName().equals(bouquet1.get(i).getName())) {
                 fail();
             }
         }
@@ -125,7 +125,7 @@ public class BouquetTest {
 
     @Test
     public void testRemoveByObject() {
-        bouquet.remove(new Flower("Rose", "red", 3, 100, 80));
+        bouquet1.remove(new Flower("Rose", "red", 3, 100, 80));
 
         Flower[] expected = {
                 new Flower("Rose", "red", 3, 110, 70),
@@ -133,11 +133,11 @@ public class BouquetTest {
         };
 
         for (int i = 0; i < expected.length; i++) {
-            if (expected[i].getPrice() != bouquet.get(i).getPrice() ||
-                    expected[i].getWeight() != bouquet.get(i).getWeight() ||
-                    expected[i].getLength() != bouquet.get(i).getLength() ||
-                    !expected[i].getColor().equals(bouquet.get(i).getColor()) ||
-                    !expected[i].getName().equals(bouquet.get(i).getName())) {
+            if (expected[i].getPrice() != bouquet1.get(i).getPrice() ||
+                    expected[i].getWeight() != bouquet1.get(i).getWeight() ||
+                    expected[i].getLength() != bouquet1.get(i).getLength() ||
+                    !expected[i].getColor().equals(bouquet1.get(i).getColor()) ||
+                    !expected[i].getName().equals(bouquet1.get(i).getName())) {
                 fail();
             }
         }
@@ -146,7 +146,7 @@ public class BouquetTest {
 
     @Test
     public void testRemoveByNullObject() {
-        bouquet.remove(null);
+        bouquet1.remove(null);
 
         Flower[] expected = {
                 new Flower("Rose", "red", 3, 110, 70),
@@ -155,11 +155,11 @@ public class BouquetTest {
         };
 
         for (int i = 0; i < expected.length; i++) {
-            if (expected[i].getPrice() != bouquet.get(i).getPrice() ||
-                    expected[i].getWeight() != bouquet.get(i).getWeight() ||
-                    expected[i].getLength() != bouquet.get(i).getLength() ||
-                    !expected[i].getColor().equals(bouquet.get(i).getColor()) ||
-                    !expected[i].getName().equals(bouquet.get(i).getName())) {
+            if (expected[i].getPrice() != bouquet1.get(i).getPrice() ||
+                    expected[i].getWeight() != bouquet1.get(i).getWeight() ||
+                    expected[i].getLength() != bouquet1.get(i).getLength() ||
+                    !expected[i].getColor().equals(bouquet1.get(i).getColor()) ||
+                    !expected[i].getName().equals(bouquet1.get(i).getName())) {
                 fail();
             }
         }

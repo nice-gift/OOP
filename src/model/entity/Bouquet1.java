@@ -1,16 +1,16 @@
-package entity;
+package model.entity;
 
 import java.util.ArrayList;
 
-public class Bouquet {
+public class Bouquet1 {
     private ArrayList<Flower> flowers;
 
 
-    public Bouquet() {
+    public Bouquet1() {
         flowers = new ArrayList<>();
     }
 
-    public Bouquet(Flower[] flowers) {
+    public Bouquet1(Flower[] flowers) {
         if (flowers != null) {
             this.flowers = new ArrayList<>();
             for (Flower flower : flowers) {

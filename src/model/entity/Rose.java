@@ -1,4 +1,4 @@
-package entity;
+package model.entity;
 
 public class Rose extends Flower {
     private double lengthOfThorn;

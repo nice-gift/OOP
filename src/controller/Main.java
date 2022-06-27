@@ -1,9 +1,6 @@
 package controller;
 
-import entity.Bouquet;
-import entity.Flower;
-import entity.Rose;
-import entity.Sunflower;
+import model.entity.*;
 import model.logic.ShopAssistance;
 
 public class Main {
@@ -19,7 +16,7 @@ public class Main {
             flowers[i] = new Sunflower("Pink Panther", "pink", 3.5, 78, 200, 15, 2);
         }
 
-        Bouquet bouquet = new Bouquet(flowers);
+        Bouquet2 bouquet = new Bouquet2(flowers);
         double weight = ShopAssistance.calculateTotalWeight(bouquet);
         double price = ShopAssistance.calculateTotalPrice(bouquet);
 
