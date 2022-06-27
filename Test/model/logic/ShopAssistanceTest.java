@@ -1,6 +1,6 @@
 package model.logic;
 
-import model.entity.Bouquet2;
+import model.entity.Bouquet3;
 import model.entity.Flower;
 import org.junit.*;
 
@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 public class ShopAssistanceTest {
 
-    private static Bouquet2 bouquet;
+    private static Bouquet3 bouquet;
 
     @BeforeClass
     public static void init() {
@@ -20,7 +20,7 @@ public class ShopAssistanceTest {
                 new Flower("Rose", "red", 3, 100, 70)
         };
 
-        bouquet = new Bouquet2(flowers);
+        bouquet = new Bouquet3(flowers);
     }
 
 //    @AfterClass
@@ -61,7 +61,7 @@ public class ShopAssistanceTest {
     @Test
     public void testCalculateTotalPriceWithEmpty() {
         Flower[] flowers = new Flower[0];
-        Bouquet2 bouquet = new Bouquet2(flowers);
+        Bouquet3 bouquet = new Bouquet3(flowers);
 
         double expected = 0;
 
@@ -92,7 +92,7 @@ public class ShopAssistanceTest {
     @Test
     public void testCalculateTotalWeightWithEmpty() {
         Flower[] flowers = new Flower[0];
-        Bouquet2 bouquet = new Bouquet2(flowers);
+        Bouquet3 bouquet = new Bouquet3(flowers);
 
         double expected = 0;
 
@@ -129,7 +129,7 @@ public class ShopAssistanceTest {
                 new Flower("Rose", "red", 4, 120, 90)
         };
 
-        Bouquet2 bouquet = new Bouquet2(flowers);
+        Bouquet3 bouquet = new Bouquet3(flowers);
 
         Flower[] expected = {new Flower("Rose", "red", 4, 120, 90),
                 new Flower("Rose", "red", 4, 120, 90)};
