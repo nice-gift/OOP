@@ -16,7 +16,7 @@ public class Main {
             flowers[i] = new Sunflower("Pink Panther", "pink", 3.5, 78, 200, 15, 2);
         }
 
-        Bouquet3 bouquet = new Bouquet3(flowers);
+        Bouquet4 bouquet = new Bouquet4(flowers);
         double weight = ShopAssistance.calculateTotalWeight(bouquet);
         double price = ShopAssistance.calculateTotalPrice(bouquet);
 

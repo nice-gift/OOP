@@ -1,12 +1,12 @@
 package model.logic;
 
-import model.entity.Bouquet3;
+import model.entity.Bouquet4;
 import model.entity.Flower;
 
 public class ShopAssistance {
     public static double LABOR_PERCENT = 0.1;
 
-    public static double calculateTotalPrice(Bouquet3 bouquet) {
+    public static double calculateTotalPrice(Bouquet4 bouquet) {
 
         if (bouquet == null || bouquet.size() == 0) {
             return 0;
@@ -21,7 +21,7 @@ public class ShopAssistance {
         return total + total * LABOR_PERCENT;
     }
 
-    public static double calculateTotalWeight(Bouquet3 bouquet) {
+    public static double calculateTotalWeight(Bouquet4 bouquet) {
 
         if (bouquet == null || bouquet.size() == 0) {
             return 0;
@@ -36,7 +36,7 @@ public class ShopAssistance {
         return total;
     }
 
-    private static int getMaxLength(Bouquet3 bouquet) {
+    private static int getMaxLength(Bouquet4 bouquet) {
         int max = bouquet.get(0).getLength();
 
         for (int i = 0; i < bouquet.size(); i++) {
@@ -47,7 +47,7 @@ public class ShopAssistance {
         return max;
     }
 
-    private static int countFlowersWithMaxLength(Bouquet3 bouquet, int maxLength) {
+    private static int countFlowersWithMaxLength(Bouquet4 bouquet, int maxLength) {
         int count = 0;
 
         for (int i = 0; i < bouquet.size(); i++) {
@@ -59,7 +59,7 @@ public class ShopAssistance {
         return count;
     }
 
-    public static Flower[] findFlowersWithMaxLength(Bouquet3 bouquet) {
+    public static Flower[] findFlowersWithMaxLength(Bouquet4 bouquet) {
         int maxLength = getMaxLength(bouquet);
         int count = countFlowersWithMaxLength(bouquet, maxLength);
 
