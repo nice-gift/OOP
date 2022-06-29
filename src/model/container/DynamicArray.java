@@ -2,7 +2,7 @@ package model.container;
 
 import model.entity.Flower;
 
-public class DynamicArray {
+public class DynamicArray extends AbstractContainer {
     private Flower[] flowers;
 
     public DynamicArray() {
@@ -11,10 +11,6 @@ public class DynamicArray {
 
     public DynamicArray(Flower[] flowers) {
         this.flowers = flowers;
-    }
-
-    public boolean isEmpty() {
-        return flowers.length == 0;
     }
 
     public int size() {

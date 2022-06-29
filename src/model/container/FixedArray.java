@@ -2,7 +2,7 @@ package model.container;
 
 import model.entity.Flower;
 
-public class FixedArray {
+public class FixedArray extends AbstractContainer{
     private Flower[] flowers;
     private int current;
 
@@ -16,10 +16,6 @@ public class FixedArray {
     public FixedArray(Flower[] flowers) {
         this.flowers = flowers;
         current = flowers.length;
-    }
-
-    public boolean isEmpty() {
-        return current == 0;
     }
 
     public int size() {
