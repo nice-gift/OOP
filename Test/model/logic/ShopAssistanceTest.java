@@ -1,11 +1,5 @@
 package model.logic;
 
-import model.entity.Bouquet3;
-import model.entity.Flower;
-import org.junit.*;
-
-import static org.junit.Assert.*;
-
 public class ShopAssistanceTest {
 //
 //    private static Bouquet3 bouquet;
