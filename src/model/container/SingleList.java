@@ -8,7 +8,7 @@ class FlowerNode {
 
 }
 
-public class SingleList extends AbstractContainer{
+public class SingleList extends AbstractContainer {
     private FlowerNode first;
 
     public SingleList() {
@@ -29,7 +29,12 @@ public class SingleList extends AbstractContainer{
         temp.next = null;
     }
 
+    //  неправильно считает с пустым листом (1)
     public int size() {
+        if (first.value == null) {
+           return 0;
+        }
+
         int count = 0;
 
         FlowerNode temp = first;
@@ -78,19 +83,24 @@ public class SingleList extends AbstractContainer{
     public void remove(int index) {
         int count = 0;
 
+        if (index == 0) {
+            first = first.next;
+            return;
+        }
+
         FlowerNode temp = first;
 
         while (temp != null) {
-            count++;
 
-            if (index == count) {
+            if (index - 1 == count) {
                 FlowerNode previous = temp;
                 temp = temp.next;
-                previous.next = temp;
+                previous.next = temp.next;
                 break;
             }
 
             temp = temp.next;
+            count++;
         }
     }
 }

@@ -1,10 +1,18 @@
 package controller;
 
+import model.container.SingleList;
 import model.entity.*;
 import model.logic.ShopAssistance;
 
 public class Main {
     public static void main(String[] args) {
+//        SingleList singleList=new SingleList();
+//        singleList.add(new Rose("Pink Panther", "pink", 3.6, 78, 200, 1.5, 5));
+//        singleList.add(new Rose("Pink Panther", "pink", 3.5, 78, 200, 1.5, 5));
+//        singleList.add(new Rose("Pink Panther", "pink", 3.8, 78, 200, 1.5, 5));
+//        singleList.add(new Rose("Pink Panther", "pink", 3.9, 78, 200, 1.5, 5));
+//        System.out.println(singleList.size());
+
 
         Flower[] flowers = new Flower[10];
 
