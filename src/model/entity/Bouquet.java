@@ -39,6 +39,10 @@ public class Bouquet {
         flowers.add(flower);
     }
 
+    public void set(int index, Flower flower) {
+        flowers.set(index, flower);
+    }
+
     public void remove(int index) {
         flowers.remove(index);
     }

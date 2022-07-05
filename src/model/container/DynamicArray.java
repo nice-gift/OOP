@@ -32,6 +32,11 @@ public class DynamicArray extends AbstractContainer {
         flowers = temp;
     }
 
+    @Override
+    public void set(int index, Flower flower) {
+        flowers[index] = flower;
+    }
+
     public void remove(int index) {
         Flower[] temp = new Flower[flowers.length - 1];
 

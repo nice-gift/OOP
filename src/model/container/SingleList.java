@@ -32,7 +32,7 @@ public class SingleList extends AbstractContainer {
     //  неправильно считает с пустым листом (1)
     public int size() {
         if (first.value == null) {
-           return 0;
+            return 0;
         }
 
         int count = 0;
@@ -78,6 +78,23 @@ public class SingleList extends AbstractContainer {
         FlowerNode node = new FlowerNode();
         node.value = flower;
         temp.next = node;
+    }
+
+    @Override
+    public void set(int index, Flower flower) {
+        int count = 0;
+
+        FlowerNode temp = first;
+
+        while (temp != null) {
+            if (index == count) {
+                temp.value = flower;
+                break;
+            }
+
+            temp = temp.next;
+            count++;
+        }
     }
 
     public void remove(int index) {

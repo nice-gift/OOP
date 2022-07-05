@@ -2,7 +2,7 @@ package model.container;
 
 import model.entity.Flower;
 
-public class FixedArray extends AbstractContainer{
+public class FixedArray extends AbstractContainer {
     private Flower[] flowers;
     private int current;
 
@@ -31,6 +31,11 @@ public class FixedArray extends AbstractContainer{
             flowers[current] = flower;
             current++;
         }
+    }
+
+    @Override
+    public void set(int index, Flower flower) {
+        flowers[index] = flower;
     }
 
     public void remove(int index) {
